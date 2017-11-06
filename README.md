@@ -1,4 +1,4 @@
-[![Meteor Icon](http://icon.meteor.com/package/useraccounts:flow-routing)](https://atmospherejs.com/useraccounts/flow-routing)
+[Flow-routing-extra](https://atmospherejs.com/useraccounts/flow-routing)
 
 # Flow Router add-on for User Accounts
 
@@ -25,7 +25,7 @@ Assuming you have a main layout that looks like this:
   <div class="content">
     {{> Template.dynamic template=main}}
   </div>
-
+useraccounts
   <footer>
     {{> Template.dynamic template=footer}}
   </footer>
@@ -58,13 +58,13 @@ AccountsTemplates.configure({
 });
 ```
 
-`useraccounts:flow-routing` uses the internal useraccounts `fullPageAtForm` is the built-in template useraccounts uses by default for its forms. You can override it on a per-route basis (see below) or replace it with `defaultTemplate:` field as above (templates specified in route config will still take precedence).  Omit `defaultTemplate` (or set to an empty string) to use the `fullPageAtForm` template built-in to your useraccounts UI package (ex [material](https://github.com/meteor-useraccounts/materialize/blob/master/lib/full_page_at_form.html)).
+`mealsunite:flow-routing-extra` uses the internal useraccounts `fullPageAtForm` is the built-in template useraccounts uses by default for its forms. You can override it on a per-route basis (see below) or replace it with `defaultTemplate:` field as above (templates specified in route config will still take precedence).  Omit `defaultTemplate` (or set to an empty string) to use the `fullPageAtForm` template built-in to your useraccounts UI package (ex [material](https://github.com/meteor-useraccounts/materialize/blob/master/lib/full_page_at_form.html)).
 
 NOTE: The above configs must load BEFORE your AccountsTemplates routes are defined (next section).
 
 ## React Configuration
 
-Firstly, please ensure that your app depends upon the [React Layout][3] and the [Blaze Layout][2] packages. User Accounts currents only renders Blaze templates. In order to use User Accounts with React we rely on the [Blaze To React][4] package to render the User Accounts templates.
+Firstly, please ensure that your app depends upon the [React Layout][3] and the [Blaze Layout][2] packages. User Accounts currents only renders Blaze templates. In order to use User Accounts with React we rely on the [Blaze To React][3] package to render the User Accounts templates.
 
 Before you configure routes for User Accounts with Flow Router, you will need to make sure you have set a few default configuration items.  
 
@@ -119,7 +119,7 @@ AccountsTemplates.configure({
 
 `useraccounts:flow-routing` uses `fullPageAtForm` for the `defaultTemplate` option.  `fullPageAtForm` is the built-in Blaze template that all UserAccounts themed packages (Bootstrap, Materialize, etc.) use for their forms. You can override it on a per-route basis (see below) or replace it as shown above (templates specified in a route config will still take precedence).  Omit `defaultTemplate` (or set to an empty string) to use the `fullPageAtForm` template built-in to your useraccounts UI package (ex [material](https://github.com/meteor-useraccounts/materialize/blob/master/lib/full_page_at_form.html)).
 
-Please note that this template must be a **Blaze** template. It will be rendered into your React layout using [Blaze To React][4].
+Please note that this template must be a **Blaze** template. It will be rendered into your React layout using [Blaze To React][3].
 
 NOTE: The above configs must load BEFORE your AccountsTemplates routes are defined (next section).
 
@@ -183,7 +183,7 @@ AccountsTemplates.configureRoute('signIn', {
 });
 ```
 
-All options are passed to FlowRouter.route() which then creates a new custom route (see the official Flow Router documentation [here](https://atmospherejs.com/kadira/flow-router) for more details).  
+All options are passed to FlowRouter.route() which then creates a new custom route (see the official Flow Router documentation [here][1] for more details).  
 
 The `redirect` field permits to specify where to redirect the user after successful form submit. Actually, `redirect` can be a function so that, for example, the following:
 
@@ -232,7 +232,6 @@ Or if you want to protect ALL routes in your app:
 FlowRouter.triggers.enter([AccountsTemplates.ensureSignedIn]);
 ```
 
-[1]: https://atmospherejs.com/kadira/flow-router
+[1]: https://atmospherejs.com/ostrio/flow-router-extra
 [2]: https://atmospherejs.com/kadira/blaze-layout
-[3]: https://atmospherejs.com/kadira/react-layout
-[4]: https://atmospherejs.com/gwendall/blaze-to-react
+[3]: https://atmospherejs.com/gadicc/blaze-react-component

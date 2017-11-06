@@ -1,20 +1,12 @@
-// Package metadata for Meteor.js web platform (https://www.meteor.com/)
-// This file is defined within the Meteor documentation at
-//
-//   http://docs.meteor.com/#/full/packagejs
-//
-// and it is needed to define a Meteor package
-'use strict';
-
 Package.describe({
-  name: 'mealsunite:user-routing-extra',
+  name: 'mealsunite:flow-routing-extra',
   summary: 'UserAccounts package providing routes configuration capability via ostrio/flow-router-extra.',
-  version: '1.14.2',
+  version: '2.0.0',
   git: 'https://github.com/MealsUnite/flow-routing.git',
 });
 
 Package.onUse(function(api) {
-  api.versionsFrom('METEOR@1.5');
+  api.versionsFrom('METEOR@1.3');
 
   api.use([
     'check',
@@ -31,10 +23,9 @@ Package.onUse(function(api) {
   ], ['client', 'server']);
 
   api.use([
-     'react@0.14.1_1',
+     'react@15.0.1',
      'kadira:blaze-layout@2.3.0',
-     'kadira:react-layout@1.5.2',
-     'gwendall:blaze-to-react@0.1.2'
+     'gadicc:blaze-react-component@1.4.0'
   ], ['client', 'server'], { weak: true });
 
   api.addFiles([
