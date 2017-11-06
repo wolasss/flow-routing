@@ -7,25 +7,26 @@
 'use strict';
 
 Package.describe({
-  name: 'useraccounts:flow-routing',
-  summary: 'UserAccounts package providing routes configuration capability via kadira:flow-router.',
+  name: 'mealsunite:user-routing-extra',
+  summary: 'UserAccounts package providing routes configuration capability via ostrio/flow-router-extra.',
   version: '1.14.2',
-  git: 'https://github.com/meteor-useraccounts/flow-routing.git',
+  git: 'https://github.com/MealsUnite/flow-routing.git',
 });
 
 Package.onUse(function(api) {
-  api.versionsFrom('METEOR@1.0.3');
+  api.versionsFrom('METEOR@1.5');
 
   api.use([
     'check',
-    'kadira:flow-router',
+    'ostrio:flow-router-extra',
     'underscore',
+    'ecmascript',
     'useraccounts:core',
     'modules'
   ], ['client', 'server']);
 
   api.imply([
-    'kadira:flow-router@2.10.1',
+    'ostrio:flow-router-extra@3.4.0',
     'useraccounts:core@1.14.2',
   ], ['client', 'server']);
 
