@@ -1,7 +1,7 @@
 Package.describe({
   name: 'mealsunite:flow-routing-extra',
   summary: 'UserAccounts package providing routes configuration capability via ostrio/flow-router-extra.',
-  version: '2.0.0',
+  version: '2.0.1',
   git: 'https://github.com/MealsUnite/flow-routing.git',
 });
 
