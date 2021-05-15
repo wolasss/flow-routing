@@ -1,30 +1,30 @@
 Package.describe({
-  name: 'mealsunite:flow-routing-extra',
+  name: 'wolas:flow-routing-extra',
   summary: 'UserAccounts package providing routes configuration capability via ostrio/flow-router-extra.',
   version: '2.0.2',
-  git: 'https://github.com/MealsUnite/flow-routing.git',
+  git: 'https://github.com/wolasss/flow-routing.git',
 });
 
 Package.onUse(function(api) {
-  api.versionsFrom('METEOR@1.3');
+  api.versionsFrom('2.2');
 
   api.use([
     'check',
     'ostrio:flow-router-extra',
     'underscore',
     'ecmascript',
-    'useraccounts:core',
+    'wolas:accounts-core',
     'modules'
   ], ['client', 'server']);
 
   api.imply([
     'ostrio:flow-router-extra@3.4.0',
-    'useraccounts:core@1.14.2',
+    'wolas:accounts-core@1.14.2',
   ], ['client', 'server']);
 
   api.use([
      'react@15.0.1',
-     'kadira:blaze-layout@2.3.0',
+     'wolas:blaze-layout@2.3.0',
      'gadicc:blaze-react-component@1.4.0'
   ], ['client', 'server'], { weak: true });
 
