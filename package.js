@@ -1,7 +1,7 @@
 Package.describe({
   name: 'wolas:flow-routing-extra',
   summary: 'UserAccounts package providing routes configuration capability via ostrio/flow-router-extra.',
-  version: '2.0.2',
+  version: '2.0.4',
   git: 'https://github.com/wolasss/flow-routing.git',
 });
 
